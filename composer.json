@@ -1,0 +1,23 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Wordpress_Data_Visualization\\": "includes"
+    }
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "wp-coding-standards/wpcs": "^2.3",
+    "phpcompatibility/php-compatibility": "^9.3",
+    "phpcompatibility/phpcompatibility-wp": "^2.1"
+  },
+  "scripts": {
+    "check-cs": "vendor/bin/phpcs --report=summary ",
+    "fix-cs": "vendor/bin/phpcbf",
+    "post-install-cmd": [
+      "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcompatibility/php-compatibility,installed_paths vendor/phpcompatibility/phpcompatibility-paragonie,installed_paths vendor/phpcompatibility/phpcompatibility-wp"
+    ],
+    "post-update-cmd": [
+      "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcompatibility/php-compatibility,installed_paths vendor/phpcompatibility/phpcompatibility-paragonie,installed_paths vendor/phpcompatibility/phpcompatibility-wp"
+    ]
+  }
+}
